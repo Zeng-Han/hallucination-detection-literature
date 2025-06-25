@@ -29,11 +29,9 @@ Han
 - **Inference-Time Intervention: Eliciting Truthful Answers from a Language Model** ![](https://img.shields.io/badge/NeurIPS2023_Spotlight-blue)
   - Recognizes truth-related attention heads and their hallucination-related directions. Modify the heads' embedding against hallucination directions.
 - **The Internal State of an LLM Knows When It's Lying** ![](https://img.shields.io/badge/EMNLP2023_findings-blue)
-  - 
+  - (to be completed)
 - **HaDeMiF: Hallucination Detection and Mitigation in Large Language Models** ![](https://img.shields.io/badge/ICLR2025-blue)
-  - 
-
-- 
+  - (to be completed)
 
 ### Black-box
 
@@ -75,23 +73,23 @@ Hallucination Detection for LVLMs emphasizes visual tokens' importance, i.e., th
 - **Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models** ![](https://img.shields.io/badge/ICLR2025-blue)
   - Adaptively select and preserve the least important visual tokens in a specific early layer to generate "contrastive generations". Subtracts contrastive generations from original generations.
 - **Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering** ![](https://img.shields.io/badge/ICLR2025_Spotlight-blue)
-  - 
+  - (to be completed)
 
 ### Out-of-distribution (OOD) detection
 
 Similar to Hallucination Detection, OOD Detection aims to distinguish the instances that are "different".
 
 - **NECO: NEural Collapse Based Out-of-distribution Detection** ![](https://img.shields.io/badge/ICLR2024-blue)
-  - 
+  - (to be completed)
 - **ViM: Out-of-Distribution with Virtual-Logit Matching** ![](https://img.shields.io/badge/CVPR2022-blue)
-  - 
+  - (to be completed)
 
 ### Knowledge editing
 
 Knowledge editing aims to update new, updated and correct knowledge to an existing LLM.
 
 - **AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models**
-  - 
+  - (to be completed)
 
 ## Surveys
 
@@ -107,9 +105,7 @@ Knowledge editing aims to update new, updated and correct knowledge to an existi
 - Natural Questions (NQ) - 3610 QA pairs extracted manually from Wikipedia.
 - SQuAD - 5928 open-book QA pairs, slightly earlier.
 
-
-
-- RAGTruth
+- RAGTruth - (to be completed)
 
 ## Metrics
 
