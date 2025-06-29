@@ -20,34 +20,43 @@ Han
 - Length-Normalized Entropy - the entropy, averaged at each step of generating tokens.
 - **Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation** ![](https://img.shields.io/badge/ICLR2023-blue)
   - Cluster generations are divided into semantically equivalent clusters, and then the entropy of the distribution on these clusters is calculated.
+  - Datasets: CoQA, TriviaQA
 - **INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection** 👍 ![](https://img.shields.io/badge/ICLR2024-blue)
   - Consistency is computed based on the embeddings in the middle layer across multiple generations.
+  - Datasets: CoQA, SQuAD, TriviaQA, NQ
 - **Enhancing Hallucination Detection with Noise Injection**
   - Inject noises into intermediate layers to improve generation diversity.
+  - Datasets: TriviaQA, CSQA, PrOntoQA
 - **ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability** ![](https://img.shields.io/badge/ICLR2025_Spotlight-blue)
   - Recognizes Copying Heads (heads that do not use external knowledge) and Knowledge FFNs (FFNs that store much knowledge). These components are characteristics of Hallucinations.
+  - Datasets: RAGTruth, Dolly (AC)
 - **Inference-Time Intervention: Eliciting Truthful Answers from a Language Model** ![](https://img.shields.io/badge/NeurIPS2023_Spotlight-blue)
   - Recognizes truth-related attention heads and their hallucination-related directions. Modify the heads' embedding against hallucination directions.
+  - Datasets: TruthfulQA
 - **The Internal State of an LLM Knows When It's Lying** ![](https://img.shields.io/badge/EMNLP2023_findings-blue)
-  - (to be completed)
+  - Use hidden states of LLMs in different layers to train a true-false classifier, trained on a collected true-false dataset.
+  - Dataset: True-False Dataset
 - **HaDeMiF: Hallucination Detection and Mitigation in Large Language Models** ![](https://img.shields.io/badge/ICLR2025-blue)
-  - (to be completed)
+  - Use both output and internal space for calculating hallucination scores (not understandable).
 
 ### Black-box
 
 - Lexical Similarity - the average similarity (Rouge-L) between answers in the answer set.
 - **SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models** ![](https://img.shields.io/badge/EMNLP2023-blue)
   - Black-box detector, using the consistency between multiple generations to tell whether a response is hallucinated.
+  - Dataset: WikiBio
 - **Scalable and Enhanced Hallucination Detection in LLMs using Semantic Clustering**
   - Enhanced version of semantic entropy, using hierarchical clustering.
 - **LLM-Check: Investigating the Detection of Hallucinations in Large Language Models** ![](https://img.shields.io/badge/NeurIPS2024-blue)
   - Similar to INSIDE, it computes eigen-decomposition at the token level in a single layer.
+  - Datasets: FAVA-Annotation, WikiBio, RAGTruth
 
 ### Exterior knowledge-based
 
-- **HaloScope: Harnessing Unlabeled LLM Generations for Hallucination Detection** 👍![](https://img.shields.io/badge/NeurIPS2024_Spotlight-blue)
+- **HaloScope: Harnessing Unlabeled LLM Generations for Hallucination Detection** 👍 ![](https://img.shields.io/badge/NeurIPS2024_Spotlight-blue)
   - Use additional unlabeled QA pairs to train a separate binary classifier.
-- **Discovering Latent Knowledge in Language Models Without Supervision** 👍![](https://img.shields.io/badge/ICLR2023_Spotlight-blue)
+  - Datasets: CoQA, TruthfulQA, TriviaQA, TydiQA-GP
+- **Discovering Latent Knowledge in Language Models Without Supervision** 👍 ![](https://img.shields.io/badge/ICLR2023_Spotlight-blue)
   - Train a peripheral binary classifier based on contrast embeddings.
 
 ### Prompting-based
@@ -58,11 +67,11 @@ Han
 ### Others
 
 - **Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models** ![](https://img.shields.io/badge/ICLR2025-blue)
-  - Use SAEs to find the "entity recognition" direction (not understandable)
+  - Use SAEs to find the "entity recognition" direction (not understandable).
 
 ## Related Topics
 
-### Hallucination in LVLMs
+### Hallucination in Large Vision-Language Models
 
 Hallucination Detection for LVLMs emphasizes visual tokens' importance, i.e., the misalignment between textual outputs and input images.
 
@@ -73,23 +82,24 @@ Hallucination Detection for LVLMs emphasizes visual tokens' importance, i.e., th
 - **Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models** ![](https://img.shields.io/badge/ICLR2025-blue)
   - Adaptively select and preserve the least important visual tokens in a specific early layer to generate "contrastive generations". Subtracts contrastive generations from original generations.
 - **Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering** ![](https://img.shields.io/badge/ICLR2025_Spotlight-blue)
-  - (to be completed)
+  - Pre-compute the hallucination-to-truthful vectors from perturbed images (visual) and hallucinated texts (textual), and add them to the test samples.
 
 ### Out-of-distribution (OOD) detection
 
-Similar to Hallucination Detection, OOD Detection aims to distinguish the instances that are "different".
+Similar to Hallucination Detection, OOD Detection aims to distinguish the instances that are "different" (not sampled from the training distribution).
 
-- **NECO: NEural Collapse Based Out-of-distribution Detection** ![](https://img.shields.io/badge/ICLR2024-blue)
-  - (to be completed)
+- **NECO: NEural Collapse Based Out-of-distribution Detection** 👍 ![](https://img.shields.io/badge/ICLR2024-blue)
+  - Based on the assumption that OOD embeddings are orthogonal to ID embeddings. First, obtain the principal components of the ID data, project a test sample onto the principal directions, and then use the length of the projected embedding as the OOD score.
 - **ViM: Out-of-Distribution with Virtual-Logit Matching** ![](https://img.shields.io/badge/CVPR2022-blue)
-  - (to be completed)
+  - Similar to NECO, but projects the embeddings into the null space of ID principal directions. The modality of the projections is later scaled as a logit.
 
 ### Knowledge editing
 
 Knowledge editing aims to update new, updated and correct knowledge to an existing LLM.
 
-- **AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models**
-  - (to be completed)
+- **AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models** 👍 ![](https://img.shields.io/badge/ICLR2025_Oral-blue)
+  - Project the updates into the null space of the original parameters, ensuring that the responses on the original questions remain unchanged.
+
 
 ## Surveys
 
@@ -105,7 +115,9 @@ Knowledge editing aims to update new, updated and correct knowledge to an existi
 - Natural Questions (NQ) - 3610 QA pairs extracted manually from Wikipedia.
 - SQuAD - 5928 open-book QA pairs, slightly earlier.
 
-- RAGTruth - (to be completed)
+- CommonsenseQA (CSQA) - 1221 multiple-choice questions related to commonsense world knowledge.
+
+- RAGTruth - 15090/2700 training/test samples with high-quality, manually annotated data for RAG hallucination detection.
 
 ## Metrics
 
