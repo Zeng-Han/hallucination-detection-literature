@@ -100,11 +100,17 @@ Knowledge editing aims to update new, updated and correct knowledge to an existi
 - **AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models** 👍 ![](https://img.shields.io/badge/ICLR2025_Oral-blue)
   - Project the updates into the null space of the original parameters, ensuring that the responses on the original questions remain unchanged.
 
+### Layer-wise analysis in LLMs
+
+Layer-wise analysis identifies which transformer layers encode certain types of information.
+
+- **Layer by Layer: Uncovering Hidden Representations in Language Models** ![](https://img.shields.io/badge/ICML2025_Oral-blue)
+  - Shows that intermediate layers consistently provide stronger features.
+
 
 ## Surveys
 
 - **Knowledge Conflicts for LLMs: A Survey** ![](https://img.shields.io/badge/EMNLP2024-blue)
-
 - **A Survey of Confidence Estimation and Calibration in Large Language Models** ![](https://img.shields.io/badge/NAACL2024-blue)
 
 ## Datasets
